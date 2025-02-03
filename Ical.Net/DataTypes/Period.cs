@@ -1,4 +1,4 @@
-﻿//
+//
 // Copyright ical.net project maintainers and contributors.
 // Licensed under the MIT license.
 //
@@ -158,6 +158,8 @@ public class Period : EncodableDataType, IComparable<Period>
             ExtrapolateTimes();
         }
     }
+
+    public bool IsAllDay => StartTime != null && EndTime != null && StartTime.Value.TimeOfDay == TimeSpan.Zero && EndTime.Value.TimeOfDay == TimeSpan.Zero;
 
     public virtual bool Contains(IDateTime dt)
     {

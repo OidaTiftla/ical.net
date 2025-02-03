@@ -1,4 +1,4 @@
-﻿//
+//
 // Copyright ical.net project maintainers and contributors.
 // Licensed under the MIT license.
 //
@@ -51,7 +51,7 @@ public class PeriodSerializer : EncodableDataTypeSerializer
                 sb.Append("/");
                 sb.Append(dtSerializer.SerializeToString(p.EndTime));
             }
-            else
+            else if (!p.IsAllDay)
             {
                 // Serialize the duration
                 sb.Append("/");
